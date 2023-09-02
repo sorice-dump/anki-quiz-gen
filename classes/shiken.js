@@ -1,8 +1,9 @@
 const Topic = require('./topic');
 const Card  = require('./card');
-export default class extends Topic {
+module.exports = class Main extends Topic {
     constructor(fields={}){
-        this.fields = {
+        super(fields);
+        this.defaultFields({
             kanji:"",
             kana:"",
             italiano:"",
@@ -12,8 +13,7 @@ export default class extends Topic {
             note:"",
             capitolo:"",
             esempi:[],
-        };
-        super(fields);
+        });
     }
     
     getCard(){

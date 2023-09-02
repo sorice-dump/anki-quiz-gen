@@ -1,14 +1,14 @@
 const Topic = require('./topic');
 const Card  = require('./card');
-export default class extends Topic {
+module.exports = class Main extends Topic {
     constructor(fields={}){
-        this.fields = {
+        super(fields);
+        this.defaultFields({
             question:"",
             options:[],
             answer: -1,
             explanation:""
-        };
-        super(fields);
+        });
     }
     
     getCard(){

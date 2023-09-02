@@ -1,6 +1,7 @@
 const Prompt = require('./prompt');
-export default class extends Prompt{
+module.exports = class Main extends Prompt{
     constructor(data){
+        super(data);
         this.template= `Fornisci per ogni termine e concetto d'informatica fornito in fondo (rispondi direttamente in json): 
         (0) Termine Fornito in kanji
         (1) Lettura in kana (uguale se la parola è già in kana) 
@@ -30,6 +31,5 @@ export default class extends Prompt{
       non mi serve contenuto testuale
         
     `;
-    super(data);
     }
 }

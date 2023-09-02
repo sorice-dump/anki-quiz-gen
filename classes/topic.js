@@ -1,11 +1,14 @@
 const Card  = require('./card');
-export default class {
+module.exports = class {
     constructor(fields={}){
         this.assignFields(fields);
     }
     assignFields(fields={}){
         this.fields = Object.assign(this.fields,fields);
-    }   
+    }  
+    defaultFields(fields={}){
+        this.fields = Object.assign(fields,this.fields);
+    }    
     getCard(){
         return new Card(
             this.fields,

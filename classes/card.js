@@ -1,4 +1,4 @@
-export default class {
+module.exports = class {
     constructor(fields={}, backTemplate="", frontTemplate=""){
         this.fields = fields;
         this.backTemplate = backTemplate;

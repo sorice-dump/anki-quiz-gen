@@ -1,5 +1,5 @@
 const fs  = require( 'fs');
-export default class{
+module.exports = class{
     loadNotesDoc = ()=>{
 
     }

@@ -1,6 +1,7 @@
 const Prompt = require('./prompt');
-export default class extends Prompt{
+module.exports = class Main extends Prompt{
     constructor(data){
+        super(data);
         this.template= `Fornisci per ogni termine e concetto d'informatica fornito in fondo (rispondi direttamente in json): 
         (0) Domanda relativa al concetto
         (1) Opzioni (3-5 Opzioni posibili) 
@@ -22,6 +23,5 @@ export default class extends Prompt{
       non mi serve contenuto testuale
         
     `;
-    super(data);
     }
 }

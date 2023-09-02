@@ -1,6 +1,6 @@
 const fs  = require( 'fs');
 const AnkiExport = require( 'anki-apkg-export').default;
-export default class {
+module.exports = class {
     construct(deckname, topics=[]){
         this.deckname = deckname
         this.topics = topics;
