@@ -1,6 +1,7 @@
 const Card  = require('./card');
 module.exports = class {
     constructor(fields={}){
+        this.fields = {};
         this.assignFields(fields);
     }
     assignFields(fields={}){

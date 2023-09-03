@@ -5,9 +5,24 @@ module.exports = class {
     constructor(secrets){
         this.secrets = secrets;
     }
+    formatAnswer(data){
+        let result = "";
+        try {
+            result =  data["choices"][0]["message"]["content"];
+            result = JSON.parse(result);
+            result = result.termini;
+
+        } catch (error) {
+            
+        }       
+        return result;
+    }
     async  answerPrompt(prompt){
         console.log(prompt);
-    
+
+        const data = fs.readFileSync("examples/resultConcept.json");
+        return this.formatAnswer(JSON.parse(data));
+
         const axios = require('axios');
         const apiKey = this.secrets['open-ai'];
         const client = axios.create({

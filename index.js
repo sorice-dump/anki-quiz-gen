@@ -1,3 +1,4 @@
+const fs = require('fs');
 const secrets = require("./secret");
 const Exporter = require("./executors/exporter");
 const QuizPrompt = require("./classes/quizPrompt");
@@ -31,6 +32,7 @@ const createConceptDeck = async(name, concepts)=>{
   const conceptAnswers = await searcher.answerPrompt(conceptPrompt.elaboratePrompt());
   console.log("(3) Formatto la risposta in un array di topic");
   const conceptsTopics = conceptAnswers.map(x=>new Shiken(x));
+  //console.log(conceptsTopics);
   console.log("(4) Mi Preparo per la generazione del deck");
   const conceptExporter = new Exporter(name, conceptsTopics);
   console.log("(5) Deck Generato");
@@ -41,7 +43,7 @@ const main = async ()=>{
   console.log("inizio");
   const concepts = ["外部割り込み","更新不可能なビュー","固定少数点数", "算術論理演算装置"]; 
   await createConceptDeck( 'kihon_gijustsha_shiken_concepts', concepts);
-  await createQuizDeck   ( 'kihon_gijustsha_shiken_quiz'    , concepts); 
+  //await createQuizDeck   ( 'kihon_gijustsha_shiken_quiz'    , concepts); 
 }
 
 (async ()=>{

@@ -1,7 +1,8 @@
-const fs  = require( 'fs');
+const path = require('node:path'); 
+const fs = require('fs');
 const AnkiExport = require( 'anki-apkg-export').default;
 module.exports = class {
-    construct(deckname, topics=[]){
+    constructor(deckname, topics=[]){
         this.deckname = deckname
         this.topics = topics;
     }
@@ -15,7 +16,8 @@ module.exports = class {
     }
     async exportDeck(dir=""){
         const apkg = new AnkiExport(this.deckname);
-        const cards = this.topics.map(x=>x.getCard);
+        console.log(this.topics);
+        const cards = this.topics.map(x=>x.getCard());
         cards.forEach((card)=>{
             apkg.addCard(card.getFront(), card.getBack());
         })

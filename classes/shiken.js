@@ -21,7 +21,7 @@ module.exports = class Main extends Topic {
         return new Card(
             this.fields,
             '${kanji}',
-            '${kana} <br/> ${italiano} <br/> ${spiegazioneJP} <br/> ${spiegazioneIT}  <br/>  ${riferimento}  <br/>  ${note} <br/> ${$esempi.join("<br/>-")}  '
+            '${kana} <br/> ${italiano} <br/> ${spiegazioneJP} <br/> ${spiegazioneIT}  <br/>  ${riferimento}  <br/>  ${note} <br/> ${esempi.join("<br/>-")}  '
         );
     }
 }

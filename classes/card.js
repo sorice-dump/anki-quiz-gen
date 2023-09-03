@@ -1,5 +1,5 @@
 module.exports = class {
-    constructor(fields={}, backTemplate="", frontTemplate=""){
+    constructor(fields={}, frontTemplate="",backTemplate=""){
         this.fields = fields;
         this.backTemplate = backTemplate;
         this.frontTemplate = frontTemplate;
