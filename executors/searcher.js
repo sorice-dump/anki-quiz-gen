@@ -20,8 +20,8 @@ module.exports = class {
     async  answerPrompt(prompt){
         console.log(prompt);
 
-        const data = fs.readFileSync("examples/resultConcept.json");
-        return this.formatAnswer(JSON.parse(data));
+       /* const data = fs.readFileSync("examples/resultConcept.json");
+        return this.formatAnswer(JSON.parse(data));*/
 
         const axios = require('axios');
         const apiKey = this.secrets['open-ai'];
